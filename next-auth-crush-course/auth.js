@@ -1,7 +1,14 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google"
 
-export const {signIn} = NextAuth({
-       
-    GoogleProvider
+
+export const {} = NextAuth({
+    
+    providers : [
+        GoogleProvider({
+        clientId : process.env.GOOGLE_CLIENT_ID,
+        clientSecret : process.env.GOOGLE_CLIENT_SECRET
     })
+    ]
+    
+})
