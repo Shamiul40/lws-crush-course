@@ -1,6 +1,8 @@
 import { auth } from "@/auth";
 import Image from "next/image";
-import React from "react";
+import SignIn from "./SignIn";
+import SignOut from "./SignOut";
+
 
 export default async function Header() {
   const session = await auth();
@@ -14,9 +16,10 @@ export default async function Header() {
         <p>{session?.user?.name}</p>
         <p>{session?.user?.email}</p>
         <Image src={session?.user?.image} alt={session?.user?.name} height={32} width={32} />
+        <SignOut></SignOut>
         </div>
       ) : (
-        <p>please logged first</p>
+        <SignIn></SignIn>
       )}
     </div>
   );
