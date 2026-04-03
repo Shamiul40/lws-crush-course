@@ -10,7 +10,7 @@ export default async function Header() {
     <div>
       <h1>Header </h1>
       {session?.user ? (
-        <div className="flex gap-5">
+        <div className="flex gap-5 justify-center">
         <p>{session?.user?.name}</p>
         <p>{session?.user?.email}</p>
         <Image src={session?.user?.image} alt={session?.user?.name} height={32} width={32} />
